@@ -21,9 +21,8 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean package'
 
-- task: CopyPublishBuildArtifacts@1
+- task: PublishBuildArtifacts@1
   inputs:
-    CopyRoot: 'C:\agent\vsts-agent-win-x64-2.195.2\_work\7\s\course\target\course.war'
-    Contents: 'C:\agent\vsts-agent-win-x64-2.195.2\_work\7\s\course\target\course.war'
-    ArtifactName: 'course.war'
-    ArtifactType: 'Container'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
