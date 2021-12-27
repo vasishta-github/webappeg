@@ -11,7 +11,7 @@ pool:
   demands:
    - agent.name -equals SURYA
 
-
+steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'course/pom.xml'
