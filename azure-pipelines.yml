@@ -17,7 +17,6 @@ steps:
     versionSpec: '11'
     jdkArchitectureOption: x64
     jdkSourceOption: PreInstalled
-    jdkFile: 'C:\Devops_tools\jdk-11'
 - task: Maven@3
   inputs:
     mavenPomFile: 'course/pom.xml'
