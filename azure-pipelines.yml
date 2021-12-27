@@ -24,6 +24,6 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
+    ArtifactName: ' C:\agent\vsts-agent-win-x64-2.195.2\_work\7\s\course\target\course.war'
     publishLocation: 'FilePath'
     TargetPath: 'C:\agent\vsts-agent-win-x64-2.195.2\_work\7\a'
