@@ -12,13 +12,18 @@ pool:
    - agent.name -equals SURYA
 
 steps:
+- task: JavaToolInstaller@0
+  inputs:
+    versionSpec: '11'
+    jdkArchitectureOption: x64
+    jdkSourceOption: LocalDirectory
+    jdkFile: 'C:\Devops_tools\jdk-11.zip'
+    jdkDestinationDirectory: 'C:\Devops_tools\java11'
+    cleanDestinationDirectory: true
 - task: Maven@3
   inputs:
     mavenPomFile: 'course/pom.xml'
     mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.11'
-    jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean package'
